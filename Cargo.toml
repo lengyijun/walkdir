@@ -21,14 +21,11 @@ appveyor = { repository = "BurntSushi/walkdir" }
 members = ["walkdir-list"]
 
 [dependencies]
-same-file = "1.0.1"
+same-file = {git="https://github.com/lengyijun/same-file"}
 
-[target.'cfg(windows)'.dependencies.winapi]
-version = "0.3"
-features = ["std", "winnt"]
-
-[target.'cfg(windows)'.dependencies.winapi-util]
-version = "0.1.1"
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_tstd = { version = "1.0", rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git", features=["untrusted_fs","thread", "backtrace"] }
+sgx_libc = { version = "1.0", rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git" }
 
 [dev-dependencies]
 doc-comment = "0.3"

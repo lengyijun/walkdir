@@ -1,3 +1,5 @@
+
+extern crate sgx_tstd as std;
 use std::ffi::OsStr;
 use std::fmt;
 use std::fs::{self, FileType};

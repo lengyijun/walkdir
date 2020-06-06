@@ -1,3 +1,5 @@
+
+extern crate sgx_tstd as std;
 use std::error;
 use std::fmt;
 use std::io;

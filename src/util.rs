@@ -1,3 +1,5 @@
+
+extern crate sgx_tstd as std;
 use std::io;
 use std::path::Path;
 
